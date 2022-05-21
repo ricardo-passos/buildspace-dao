@@ -1,7 +1,7 @@
 import { Button } from '@mantine/core'
 
 function ConnectWallet() {
-  return <Button>Connect my wallet</Button>
+  return <Button>Connect your wallet</Button>
 }
 
 export { ConnectWallet }
