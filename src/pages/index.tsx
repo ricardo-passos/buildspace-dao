@@ -5,6 +5,7 @@ import { useAddress, useEditionDrop } from '@thirdweb-dev/react'
 // components
 import { Header } from '../components/Header'
 import { Proposals } from '../components/Proposals'
+import { Alert } from '../components/UnsupportedNetwork'
 import { TokenHolders } from '../components/TokenHolders'
 import { MintMembershipNFT } from '../components/MintMembershipNFT'
 
@@ -39,7 +40,7 @@ function Home() {
   }, [address, editionDrop])
 
   return (
-    <Box p='10px' sx={{ width: '100%', height: '100vh' }}>
+    <Group p='10px' sx={{ width: '100%' }} direction='column' position='center'>
       <Header />
 
       {hasClaimedNFT ? (
@@ -51,6 +52,8 @@ function Home() {
           }}
         >
           <Group direction='column' position='center' sx={{ gap: '0px' }}>
+            <Alert />
+
             <Title sx={{ fontSize: '48px' }}>🍪DAO Member Page</Title>
 
             <Text component='p'>Congratulations on being a member</Text>
@@ -63,7 +66,7 @@ function Home() {
       ) : (
         <MintMembershipNFT setHasClaimedNFT={setHasClaimedNFT} />
       )}
-    </Box>
+    </Group>
   )
 }
 
