@@ -9,7 +9,7 @@ type Props = {
 
 function Thirdweb({ children }: Props) {
   return (
-    <ThirdwebProvider desiredChainId={ChainId.Rinkeby}>
+    <ThirdwebProvider desiredChainId={ChainId.Goerli}>
       {children}
     </ThirdwebProvider>
   )
